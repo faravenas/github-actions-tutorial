@@ -1,3 +1,5 @@
+name: Triggers
+run-name: Estoy aprendiendo triggers
 on:
   push:
     branches: [main]
@@ -6,3 +8,12 @@ on:
   workflow_dispatch:     # Se puede ejecutar desde la GUI
   schedule:
     - cron: '0 0 * * 0'  # Cada domingo a medianoche
+jobs:
+  hola-mundo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Correr script
+        run: python main.py
+  
